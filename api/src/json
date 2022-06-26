@@ -1,0 +1,35 @@
+{
+    "aud":"localhost:7777",
+    "iss":"localhost:7777",
+    "exp":"999999999999",
+    "entityUUID":"222222",
+    "userUUID":"333333",
+    "levelOnEntity":"100"
+}
+
+
+{
+    "meta": {
+        "code": 200,
+        "message": "OK"
+    },
+    "content": {
+        "room": {
+            "id": 3,
+            "name": "wenaswenas",
+            "level_admin": 1,
+            "type": "group",
+            "entity_owner": "f07c29ca-da21-4d95-a29e-b7f22809fe04",
+            "updatedAt": "2022-06-25T04:51:30.971Z",
+            "createdAt": "2022-06-25T04:51:30.971Z",
+            "uuid": "85584fb4-a770-433a-afed-8012dfce4f71",
+            "max_entity_rules": 10
+        }
+    }
+}
+
+
+//jwt user 1
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJodHRwczovL2NoYXQubmFuby5uZXQiLCJpc3MiOiJodHRwczovL2FwaS5uYW5vLm5ldCIsImV4cCI6MTY1NjEzNTk3ODAwMCwidXNlclVVSUQiOiI0ZDIxMDhjMi1mNGYyLTQwNjAtOTA3YS0wNzQxZjk1M2VmYjciLCJlbnRpdHlVVUlEIjoiZjA3YzI5Y2EtZGEyMS00ZDk1LWEyOWUtYjdmMjI4MDlmZTA0IiwiaWF0IjoxNTE2MjM5MDIyLCJsZXZlbE9uRW50aXR5IjoiMTAwIiwic3ViIjoiMTI1LTEyNSJ9.76mooExBntWeu1wdMQFjJQxJDZW11tLPVZ7wS6ZUehs
+//jwt user 2
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJodHRwczovL2NoYXQubmFuby5uZXQiLCJpc3MiOiJodHRwczovL2FwaS5uYW5vLm5ldCIsImV4cCI6MTY1NjEzNTk3ODAwMCwidXNlclVVSUQiOiI0ZDg2MDhjMi1mNGYyLTQwNjAtOTA3YS0wNzQxZjk1M2VmYjciLCJlbnRpdHlVVUlEIjoiZjA3YzI5Y2EtZGEyMS00ZDk1LWEyOWUtYjdmMjI4MDlmZTA0IiwiaWF0IjoxNTE2MjM5MDIyLCJsZXZlbE9uRW50aXR5IjoiMTAwIiwic3ViIjoiMTI1LTEyNSJ9.wamgJpitTUvTW87i0FNHaFlOu1M6oa1I4wzbqLk-C5E
