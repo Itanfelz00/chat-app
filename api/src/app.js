@@ -7,6 +7,9 @@ const koajwt = require('koa-jwt');
 const override = require('koa-override-method');
 const helmet = require('koa-helmet');
 const http = require('http');
+
+const cors = require('@koa/cors');
+
 // const casbin = require('casbin')
 // const authz = require('koa-authz');
 
@@ -54,6 +57,11 @@ app.context.orm = orm;
 /**
  * Middlewares
  */
+var options = {
+  origin: '*'
+};
+
+app.use(cors(options));
 
 // expose running mode in ctx.state
 
