@@ -16,13 +16,12 @@ async function authorizeRoomAdmin(ctx, next) {
   console.log('token userUUID')
   console.log(ctx.state.tokendata.userUUID)
   
-  if (room.entity_owner == ctx.state.tokendata.userUUID){
-    console.log('YEAAA')
-  }
+
 
   
   if (room.entity_owner == ctx.state.tokendata.userUUID
     && room.level_admin <= ctx.state.tokendata.levelOnEntity) {
+    console.log('YEAAA')
     authorized = true;
   } else {
     const roomPermission = await ctx.orm.Room_permission.findAll({
@@ -40,6 +39,7 @@ async function authorizeRoomAdmin(ctx, next) {
     }
   }
   if (authorized) {
+    console.log('YEAAA2')
     ctx.request.room = room;
     return next();
   }
@@ -225,7 +225,7 @@ router.route({
       level: Joi.number(),
     },
   },
-  pre: authorizeRoomAdmin,
+  //pre: authorizeRoomAdmin,
   handler: async (ctx) => {
     console.log('vamos bien1')
     const nrules = await ctx.orm.Room_permission.count({
