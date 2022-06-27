@@ -225,7 +225,7 @@ router.route({
   //     level: Joi.number(),
   //   },
   // },
-  //pre: authorizeRoomAdmin,
+  pre: authorizeRoomAdmin,
   handler: async (ctx) => {
     console.log('vamos bien1')
     const nrules = await ctx.orm.Room_permission.count({
