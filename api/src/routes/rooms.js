@@ -25,6 +25,7 @@ async function authorizeRoomAdmin(ctx, next) {
     console.log(roomPermission)
     if (roomPermission.some((element) => element.permissions.indexOf('a') > -1)) {
       authorized = true;
+      console.log('permisitooooos')
       ctx.request.room_permission = roomPermission;
     }
   }
