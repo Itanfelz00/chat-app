@@ -162,7 +162,7 @@ router.route({
       permissions: 'rw',
     };
     await ctx.orm.Room_permission.create(baseUserPermission);
-    await ctx.orm.Room_permission.create(baseEntityPermission);
+    //await ctx.orm.Room_permission.create(baseEntityPermission);
     ctx.response.json = { room };
     ctx.status = 200;
   },
