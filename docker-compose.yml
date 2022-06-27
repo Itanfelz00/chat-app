@@ -10,7 +10,7 @@ services:
       - "5432:5432"
   api:
     build:
-      context: api2
+      context: api
       dockerfile: Dockerfile.dev
     container_name: api
     restart: always
