@@ -187,29 +187,10 @@ router.route({
  * b = banned
  * a = admin
  */
-router.route({
-  method: 'OPTIONS',
-  path: '/rooms',
-  handler: async (ctx) => {
-    ctx.set('Access-Control-Allow-Origin', '*')
-    ctx.set('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    ctx.set('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
-  },
-});
 
 
-router.route({
-  method: 'PUT',
-    path: '/rooms',
-  handler: async (ctx) => {
-    ctx.set('Access-Control-Allow-Origin', '*')
-    ctx.set('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    ctx.set('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
-      
-    ctx.status = 200;
-    
- },
-});
+
+
 
 
 
@@ -225,7 +206,6 @@ router.route({
       id: Joi.number(),
     },
     body: {
-      entity_UUID: Joi.string().guid(),
       permissions: Joi.string().max(5),
       level: Joi.number(),
     },
