@@ -212,6 +212,7 @@ router.route({
   },
   pre: authorizeRoomAdmin,
   handler: async (ctx) => {
+    console.log('vamos bien1')
     const nrules = await ctx.orm.Room_permission.count({
       where: {
         room_id: {
@@ -219,7 +220,9 @@ router.route({
         },
       },
     }); 
+    console.log('vamos bien2')
     if (nrules <= 10) {
+      console.log('vamos bien3')
       const rule = {
         room_id: ctx.request.room.id,
         entity_UUID: ctx.request.body.entity_UUID,
@@ -227,9 +230,11 @@ router.route({
         permissions: ctx.request.body.permissions,
       };
       try {
+        console.log('vamos bien4')
         ctx.status = 201;
         ctx.response.json = await ctx.orm.Room_permission.create(rule);
       } catch (error) {
+        console.log('vamos malito')
         ctx.response.meta.reason = error.parent.detail;
         ctx.throw(400);
       }
