@@ -58,7 +58,7 @@ app.context.orm = orm;
  * Middlewares
  */
 var options = {
-  origin: '*'
+  origin: 'http://localhost:8000'
 };
 
 app.use(cors(options));

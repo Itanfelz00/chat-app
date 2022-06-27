@@ -188,6 +188,35 @@ router.route({
  * a = admin
  */
 router.route({
+  method: 'OPTIONS',
+  path: '/rooms',
+  handler: async (ctx) => {
+    ctx.set('Access-Control-Allow-Origin', '*')
+    ctx.set('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    ctx.set('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
+  },
+});
+
+
+router.route({
+  method: 'PUT',
+    path: '/rooms',
+  handler: async (ctx) => {
+    ctx.set('Access-Control-Allow-Origin', '*')
+    ctx.set('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    ctx.set('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
+      
+    ctx.status = 200;
+    
+ },
+});
+
+
+
+
+
+
+router.route({
   method: 'PUT',
   path: '/:id/members',
   validate: {
@@ -221,7 +250,6 @@ router.route({
         ctx.status = 201;
         ctx.response.json = await ctx.orm.Room_permission.create(rule);
       } catch (error) {
-        console.log('sheeeesh')
         ctx.response.meta.reason = error.parent.detail;
         ctx.throw(400);
       }
