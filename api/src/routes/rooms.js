@@ -215,16 +215,16 @@ router.route({
 router.route({
   method: 'PUT',
   path: '/:id/members',
-  validate: {
-    type: 'json',
-    params: {
-      id: Joi.number(),
-    },
-    body: {
-      permissions: Joi.string().max(5),
-      level: Joi.number(),
-    },
-  },
+  // validate: {
+  //   type: 'json',
+  //   params: {
+  //     id: Joi.number(),
+  //   },
+  //   body: {
+  //     permissions: Joi.string().max(5),
+  //     level: Joi.number(),
+  //   },
+  // },
   //pre: authorizeRoomAdmin,
   handler: async (ctx) => {
     console.log('vamos bien1')
