@@ -110,6 +110,8 @@ app.use((ctx, next) => {
   return next();
 });
 
+app.use((ctx, next) => {console.log(process.env.JWT_MASTER_SECRET); return next();})
+
 
 
 
@@ -130,9 +132,12 @@ const messageWrapper = async (ctx, next) => {
   ctx.response.status = status;
 };
 
+app.use((ctx, next) => {console.log(process.env.JWT_MASTER_SECRET); return next();})
+
 
 app.use(messageWrapper);
 
+app.use((ctx, next) => {console.log(process.env.JWT_MASTER_SECRET); return next();})
 
 
 
@@ -162,6 +167,7 @@ app.use(async (ctx, next) => {
 });
 
 
+app.use((ctx, next) => {console.log(process.env.JWT_MASTER_SECRET); return next();})
 
 // On websockets
 // FFS this don't accept require
