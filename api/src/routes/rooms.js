@@ -147,7 +147,7 @@ router.route({
   },
   handler: async (ctx) => {
     const roomJson = ctx.request.body;
-    roomJson.entity_owner = ctx.state.tokendata.entityUUID;
+    roomJson.entity_owner = ctx.state.tokendata.userUUID;
     const room = await ctx.orm.Room.create(roomJson);
     const baseUserPermission = {
       room_id: room.id,
@@ -155,12 +155,12 @@ router.route({
       level: ctx.state.tokendata.levelOnEntity,
       permissions: 'rwa',
     };
-    const baseEntityPermission = {
-      room_id: room.id,
-      entity_UUID: ctx.state.tokendata.entityUUID,
-      level: 100,
-      permissions: 'rw',
-    };
+    // const baseEntityPermission = {
+    //   room_id: room.id,
+    //   entity_UUID: ctx.state.tokendata.entityUUID,
+    //   level: 100,
+    //   permissions: 'rw',
+    // };
     await ctx.orm.Room_permission.create(baseUserPermission);
     //await ctx.orm.Room_permission.create(baseEntityPermission);
     ctx.response.json = { room };
