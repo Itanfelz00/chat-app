@@ -16,7 +16,7 @@ module.exports = {
         allowNull: false,
         allowEmpty: false,
         primaryKey: true,
-        type: Sequelize.UUID,
+        type: Sequelize.INTEGER,
       },
       level: {
         allowNull: false,

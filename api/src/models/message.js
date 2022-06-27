@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Message.init({
     room_id: DataTypes.INTEGER,
-    emitter: DataTypes.UUID,
+    emitter: DataTypes.INTEGER,
     content: DataTypes.STRING,
   }, {
     sequelize,

@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   Room.init({
     uuid: DataTypes.UUID,
     name: DataTypes.STRING,
-    entity_owner: DataTypes.UUID,
+    entity_owner: DataTypes.INTEGER,
     level_admin: DataTypes.INTEGER,
     type: DataTypes.STRING,
     max_entity_rules: DataTypes.INTEGER,

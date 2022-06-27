@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
 
   Room_permission.init({
     room_id: DataTypes.INTEGER,
-    entity_UUID: DataTypes.UUID,
+    entity_UUID: DataTypes.INTEGER,
     level: DataTypes.INTEGER,
     permissions: DataTypes.STRING,
     kind: DataTypes.STRING,

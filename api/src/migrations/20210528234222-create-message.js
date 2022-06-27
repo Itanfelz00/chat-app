@@ -18,7 +18,7 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       emitter: {
-        type: Sequelize.UUID,
+        type: Sequelize.INTEGER,
       },
       content: {
         type: Sequelize.STRING,

@@ -14,7 +14,7 @@ module.exports = {
       'Rooms',
       'entity_owner',
       {
-        type: Sequelize.UUID(4),
+        type: Sequelize.INTEGER,
       },
     );
   },
