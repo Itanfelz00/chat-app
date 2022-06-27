@@ -150,6 +150,8 @@ router.route({
   handler: async (ctx) => {
     const roomJson = ctx.request.body;
     roomJson.entity_owner = ctx.state.tokendata.userUUID;
+    console.log('JSOOOON')
+    console.log(roomJson)
     const room = await ctx.orm.Room.create(roomJson);
     const baseUserPermission = {
       room_id: room.id,
