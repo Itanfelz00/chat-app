@@ -11,7 +11,7 @@ async function authorizeRoomAdmin(ctx, next) {
     return ctx.throw(404);
   }
   let authorized = false;
-  if (room.entity_owner === ctx.state.tokendata.entityUUID
+  if (room.entity_owner === ctx.state.tokendata.userUUID
     && room.level_admin <= ctx.state.tokendata.levelOnEntity) {
     authorized = true;
   } else {
@@ -21,6 +21,8 @@ async function authorizeRoomAdmin(ctx, next) {
         entity_UUID: { [Op.in]: [ctx.state.tokendata.userUUID] },
       },
     });
+    console.log('permisos:')
+    console.log(roomPermission)
     if (roomPermission.some((element) => element.permissions.indexOf('a') > -1)) {
       authorized = true;
       ctx.request.room_permission = roomPermission;
