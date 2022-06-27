@@ -16,12 +16,12 @@ async function authorizeRoomAdmin(ctx, next) {
   console.log('token userUUID')
   console.log(ctx.state.tokendata.userUUID)
   
-  if (room.entity_owner === ctx.state.tokendata.userUUID){
+  if (room.entity_owner == ctx.state.tokendata.userUUID){
     console.log('YEAAA')
   }
 
   
-  if (room.entity_owner === ctx.state.tokendata.userUUID
+  if (room.entity_owner == ctx.state.tokendata.userUUID
     && room.level_admin <= ctx.state.tokendata.levelOnEntity) {
     authorized = true;
   } else {
