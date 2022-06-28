@@ -59,7 +59,7 @@ app.context.orm = orm;
  * Middlewares
  */
 var options = {
-  origin: 'http://localhost:8000'
+  origin: ['http://localhost:8000', 'http://frontend-froends.s3-website-sa-east-1.amazonaws.com/']
 };
 
 app.use(cors(options));
