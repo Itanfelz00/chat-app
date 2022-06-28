@@ -17,6 +17,7 @@ module.exports = (sequelize, DataTypes) => {
     room_id: DataTypes.INTEGER,
     emitter: DataTypes.INTEGER,
     content: DataTypes.STRING,
+    usuario: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'Message',

@@ -262,6 +262,7 @@ wsrouter.all('/chat', async (ctx) => {
           room_id: roomIDTarget,
           content: command.msg,
           emitter: actualUser.userUUID,
+          usuario: command.usuario,
         };
         await ctx.orm.Message.create(msg);
         //delete msg.room_id;
