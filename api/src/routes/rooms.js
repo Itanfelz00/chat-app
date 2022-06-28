@@ -4,6 +4,7 @@ const { Joi } = jRouter;
 const { Op } = require('sequelize');
 
 const router = jRouter();
+var newrelic = require('newrelic');
 
 async function authorizeRoomAdmin(ctx, next) {
   const room = await ctx.orm.Room.findByPk(ctx.params.id);
@@ -164,6 +165,7 @@ router.route({
     console.log('JSOOOON')
     console.log(roomJson)
     const room = await ctx.orm.Room.create(roomJson);
+    newrelic.recordMetric('Rooms/Creados', room.id);
     const baseUserPermission = {
       room_id: room.id,
       entity_UUID: ctx.state.tokendata.userUUID,

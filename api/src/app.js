@@ -12,6 +12,7 @@ const cors = require('@koa/cors');
 
 // const casbin = require('casbin')
 // const authz = require('koa-authz');
+var newrelic = require('newrelic');
 
 // Things for websockets
 const redis = require('redis');
@@ -265,6 +266,7 @@ wsrouter.all('/chat', async (ctx) => {
           usuario: command.usuario,
         };
         await ctx.orm.Message.create(msg);
+        newrelic.recordMetric('Message/Creado', msg.id);
         //delete msg.room_id;
 
         ctx.redisClientCommonPub.publish(`room-${roomIDTarget}`, JSON.stringify(msg));
